@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tengohambrewe</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4,#fad0c4);
+    overflow:hidden;
+}
+
+.container{
+    width:90%;
+    max-width:800px;
+}
+
+.card{
+    background:white;
+    border-radius:25px;
+    padding:40px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,.2);
+    animation:fadeIn 1s ease;
+}
+
+h1{
+    color:#ff4d6d;
+    margin-bottom:20px;
+}
+
+p{
+    font-size:1.2rem;
+    color:#555;
+    margin-bottom:25px;
+    line-height:1.6;
+}
+
+img{
+    width:100%;
+    max-width:400px;
+    border-radius:20px;
+    margin:20px auto;
+    display:block;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+button{
+    border:none;
+    padding:15px 30px;
+    border-radius:50px;
+    background:#ff4d6d;
+    color:white;
+    font-size:1rem;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+    background:#ff3358;
+}
+
+.botones{
+    display:flex;
+    justify-content: center;
+    gap:15px;
+    margin-top:20px;
+}
+
+.hidden{
+    display:none;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.heart{
+    position:absolute;
+    color:white;
+    font-size:20px;
+    animation:float 8s linear infinite;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh);
+        opacity:1;
+    }
+
+    to{
+        transform:translateY(-100px);
+        opacity:0;
+    }
+}
+
+#regaloFinal:hover{
+    transform:scale(1.05);
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1 id="titulo">Hola beibi</h1>
+
+        <p id="texto">
+            Picale a la tecla F11 en tu teclado y al boton de abajo porfi
+        </p>
+
+        <img
+        id="imagen"
+        src="fotos/imagen1.jfif"
+        alt="foto">
+
+        <div class="botones">
+
+            <button id="btnAnterior" onclick="anterior()"> 
+                Regresar
+
+            </button>
+
+            <button id="btnSiguiente" onclick="siguiente()">
+                Picale aqui we
+
+            </button>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+const portada = {
+
+    titulo: "Hola beibi",
+
+    texto: "Picale a la tecla F11 de tu teclado y al boton de abajo porfi",
+
+    imagen: "fotos/imagen1.jfif",
+
+    boton: "Picale aqui we"
+
+};
+
+const etapas = [
+
+{
+titulo:"Hola cachorrita",
+texto:"Te preguntaras que es esto.",
+imagen:"fotos/imagen3.jpg",
+boton:"Picale a este tmb we"
+},
+
+{
+titulo:"Tengo hambre we",
+texto:"Pos la neta we, como no tengo novia y desde hace rato me daban ganas de hacer una mamada asi, como los de los videos del tistos, ps dije, se lo voy a hacer a esta bastardita.",
+imagen:"fotos/imagen2.png",
+boton:"Ahora a este"
+},
+
+{
+titulo:"Si todo salio bien",
+texto:"Te mande esta mmada el mero dia importante, si no se me olvido, porq ps tu ya sabes q estoy medio pendejin, si se me olvida ps ni modo bisch.",
+imagen:"fotos/imagen4.jpeg",
+boton:"Todavia falta we tu picale"
+},
+
+{
+titulo:"Pero bueno",
+texto:"Obviamente todo este pedo es por tu cumpleaños wei, de verdad me alegro mucho de haberte conocido, eres una de las personas mas importantes en mi vida, y te voy a decir porque.",
+imagen:"fotos/imagencum.jpg",
+boton:"Siguele picando"
+},
+
+{
+titulo:"Siempre estas ahi",
+texto:"Apesar de que nos vemos pocas veces en persona, nunca ah sido impedimento para nosotros, nuestra amistad es tan chingona que apesar de casi no vernos, se que cuando yo te necesite vas a estar ahi, y obviamente tu sabes que yo hare lo mismo por ti, cuando sea que me necesites.",
+imagen:"fotos/imagen9.jpeg",
+boton:"Aun falta we jsjsj"
+},
+
+{
+titulo:"Te preocupas demasiado",
+texto:"Otra cosa que me encanta de ti, es lo mucho que te preocupas por las personas que te importan, ya sean tus amigos, tu familia, hasta por los niños con los que trabajas, se que no hay nada mas importante para ti que eso, y eso dice mucho de lo hermosa persona que eres.",
+imagen:"fotos/imagen10.jpeg",
+boton:"Siguele"
+
+
+},
+
+{
+titulo:"Estas bien cagada we",
+texto:"Recuerdo como nos cagabamos de risa en la uni we, ya sea por alguna pndejada como comer un brownie de esos magicos y q te cagues de risa por como me veia jajsajs, o por ir vestidos para hawolin y q tu hayas ido toda arreglada preciosa y yo con un pinche saco y la guitarra y decir q soy el franco escamilla xd, son recuerdos que siempre voy a tener en mi cabeza, gracias a ti, el infierno que era para mi la 2da carrera, se hizo mucho mas divertido. (jasjajs nos vemos bien prietos en esa foto, bueno, tu mas que yo.)",
+imagen:"fotos/fotitoconitzel3.jpeg",
+boton:"Picale wei"
+},
+
+{
+titulo:"Y por ultimo",
+texto:"Ya me canse we, jajsajs nomas porq es para ti we, bueno ya para terminar, solo espero que tengas un excelente cumpleaños y una excelente vida, te quiero mucho, gracias por estar ahi para mi siempre, me motivas a ser mejor persona y quiero que sepas que siempre estare ahi para ti, para apoyarte y felicitarte por todo lo que consigas, y se que sera mucho porque se lo talentosa, increible y capaz que eres, se que puedes lograr todo lo que te propongas, y mas te vale, porq ps me tienes que mantener porq si no terminare todo crikoso abriendo las puertas del oxxo hjajsas, tqm we de verdad.",
+imagen:"fotos/fotitoconitzel.jpeg",
+boton:"Es el ultimo ya we"
+
+
+
+}
+
+];
+
+let indice = -1;
+
+/* Cargar portada automáticamente */
+
+document.getElementById("titulo").innerText =
+portada.titulo;
+
+document.getElementById("texto").innerText =
+portada.texto;
+
+document.getElementById("imagen").src =
+portada.imagen;
+
+document.getElementById("btnSiguiente").innerText =
+portada.boton;
+
+actualizarBotonAnterior();
+
+function siguiente(){
+
+    indice++;
+
+    if(indice < etapas.length){
+
+        document.getElementById("titulo").innerText =
+        etapas[indice].titulo;
+
+        document.getElementById("texto").innerText =
+        etapas[indice].texto;
+
+        document.getElementById("imagen").src =
+        etapas[indice].imagen;
+
+        document.getElementById("btnSiguiente").innerText =
+        etapas[indice].boton;
+
+        actualizarBotonAnterior();
+
+    }else{
+
+        document.querySelector(".card").innerHTML = `
+
+    <h1>🎉 FELIZ CUMPLEAÑOS 🎉</h1>
+
+    <p>
+        No te iba a dar ni madres porq ya me rompi la cola haciendo esto, pero te lo mereces beibi. Gracias por ser una de las mejores personas que eh conocido en mi vida. 
+    </p>
+
+    <img
+    id="regaloFinal"
+    src="fotos/regalo.jfif"
+    onclick="mostrarRegalo()"
+    style="
+    width:300px;
+    cursor:pointer;
+    transition:.3s;
+    "
+    >
+
+<p>
+    Picale a la imagen para que se abra.
+</p>
+
+`;
+    }
+}
+
+function anterior(){
+
+    if(indice < 0){
+        return;
+    }
+
+    indice--;
+
+    if(indice === -1){
+
+        document.getElementById("titulo").innerText =
+        portada.titulo;
+
+        document.getElementById("texto").innerText =
+        portada.texto;
+
+        document.getElementById("imagen").src =
+        portada.imagen;
+
+        document.getElementById("btnSiguiente").innerText =
+        portada.boton;
+
+    }else{
+
+        document.getElementById("titulo").innerText =
+        etapas[indice].titulo;
+
+        document.getElementById("texto").innerText =
+        etapas[indice].texto;
+
+        document.getElementById("imagen").src =
+        etapas[indice].imagen;
+
+        document.getElementById("btnSiguiente").innerText =
+        etapas[indice].boton;
+
+    }
+
+    actualizarBotonAnterior();
+
+}
+
+function mostrarRegalo(){
+
+    const regalo =
+    document.getElementById("regaloFinal");
+
+    regalo.src =
+    "fotos/tarjetaspoty.jpg";
+
+    regalo.style.width =
+    "400px";
+
+    regalo.onclick = null;
+
+    
+
+}
+
+
+
+function actualizarBotonAnterior(){
+
+    const btnAnterior =
+    document.getElementById("btnAnterior");
+
+    if(indice < 0){
+        btnAnterior.style.display = "none";
+    }else{
+        btnAnterior.style.display = "inline-block";
+    }
+
+}
+
+function crearCorazon(){
+
+    const heart = document.createElement("div");
+
+    heart.classList.add("heart");
+
+    heart.innerHTML = "⭐";
+
+    heart.style.left = Math.random()*100 + "vw";
+
+    heart.style.fontSize =
+    Math.random()*20 + 15 + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },8000);
+}
+
+setInterval(crearCorazon,500);
+
+</script>
+
+</body>
+</html>
